@@ -9,7 +9,7 @@ export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen bg-gray-100 font-medium">
             <nav className="bg-gray-800 border-b border-gray-100">
                 <div className="px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 items-center justify-between">
@@ -27,7 +27,7 @@ export default function Authenticated({ user, header, children }) {
                                 <NavLink href={route('dashboard')}>
                                     User
                                 </NavLink>
-                                <NavLink href={route('dashboard')}>
+                                <NavLink href={route('nas.index')} active={route().current('nas.index')}>
                                     Nas
                                 </NavLink>
                                 <NavLink href={route('dashboard')}>
@@ -124,7 +124,7 @@ export default function Authenticated({ user, header, children }) {
 
             {header && (
                 <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
+                    <div className="py-6 px-4 sm:px-6 lg:px-8">{header}</div>
                 </header>
             )}
 

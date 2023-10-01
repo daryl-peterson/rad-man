@@ -6,7 +6,7 @@ use App\Core\Exceptions\InvalidOperator;
 
 trait Operator
 {
-    public const VALID_OPS = [
+    public static $VALID_OPS = [
         ':=',
         '==',
         '+=',
@@ -26,7 +26,7 @@ trait Operator
      */
     public function setOpAttribute(string $value): void
     {
-        if (!in_array($value, self::VALID_OPS)) {
+        if (!in_array($value, self::$VALID_OPS)) {
             throw new InvalidOperator('Invalid operator assignment');
         }
         $this->attributes['op'] = $value;
